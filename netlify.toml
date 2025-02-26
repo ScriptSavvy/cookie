@@ -1,14 +1,19 @@
 [build]
-  command = "jekyll build"
+  # Update RubyGems, install gems, then build your Jekyll site
+  command = "gem update --system && bundle install && jekyll build"
+  publish = "_site"
 
 [context.production.environment]
   JEKYLL_ENV = "production"
   NODE_VERSION = "18"
+  RUBY_VERSION = "3.1.2"
 
 [context.branch-deploy.environment]
   JEKYLL_ENV = "staging"
   NODE_VERSION = "18"
+  RUBY_VERSION = "3.1.2"
 
 [context.deploy-preview.environment]
   JEKYLL_ENV = "staging"
   NODE_VERSION = "18"
+  RUBY_VERSION = "3.1.2"
